@@ -1,7 +1,5 @@
-# Apos.Shapes
-Shape rendering library for MonoGame.
-
-[![Discord](https://img.shields.io/discord/355231098122272778.svg)](https://discord.gg/MonoGame)
+# FNA.NET.Shapes
+Shape rendering library for FNA.NET.
 
 ## Description
 
@@ -15,7 +13,7 @@ This library draws shapes using [SDF](https://en.wikipedia.org/wiki/Signed_dista
 
 ## Build
 
-[![NuGet](https://img.shields.io/nuget/v/Apos.Shapes.svg)](https://www.nuget.org/packages/Apos.Shapes/) [![NuGet](https://img.shields.io/nuget/dt/Apos.Shapes.svg)](https://www.nuget.org/packages/Apos.Shapes/)
+[![NuGet](https://img.shields.io/nuget/v/FNA.NET.Shapes.svg)](https://www.nuget.org/packages/FNA.NET.Shapes/) [![NuGet](https://img.shields.io/nuget/dt/FNA.NET.Shapes.svg)](https://www.nuget.org/packages/FNA.NET.Shapes/)
 
 ## Features
 
@@ -34,13 +32,13 @@ This library draws shapes using [SDF](https://en.wikipedia.org/wiki/Signed_dista
 Install with:
 
 ```
-dotnet add package Apos.Shapes
+dotnet add package FNA.NET.Shapes
 ```
 
 Add to your Game1.cs:
 
 ```csharp
-using Apos.Shapes;
+using FNA.NET.Shapes;
 
 // ...
 
