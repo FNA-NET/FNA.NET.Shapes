@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+
+    <PackageId>FNA.NET.Shapes</PackageId>
+    <Description>Shape rendering in FNA.NET.</Description>
+    <PackageTags>gamedev;fna;shapes;xna</PackageTags>
+
+    <Authors>Jean-David Moisan,ryancheung</Authors>
+    <Copyright>Copyright 2024</Copyright>
+
+    <RepositoryUrl>https://github.com/FNA-NET/FNA.NET.Shapes</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/FNA-NET/FNA.NET.Shapes</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FNA.NET" Version="1.0.4.2403" />
+  </ItemGroup>
+
+</Project>
