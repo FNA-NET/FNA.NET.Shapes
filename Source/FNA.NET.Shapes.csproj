@@ -6,7 +6,7 @@
     <PackageId>FNA.NET.Shapes</PackageId>
     <Description>Shape rendering in FNA.NET.</Description>
     <PackageTags>gamedev;fna;shapes;xna</PackageTags>
-
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Authors>Jean-David Moisan,ryancheung</Authors>
     <Copyright>Copyright 2024</Copyright>
 
@@ -18,12 +18,17 @@
 
     <VersionPrefix>0.2.3</VersionPrefix>
     <VersionSuffix></VersionSuffix>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Content\apos-shapes.fxb">
       <LogicalName>FNA.NET.Resources.apos-shapes.fxb</LogicalName>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
