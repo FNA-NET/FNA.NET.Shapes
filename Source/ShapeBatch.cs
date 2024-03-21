@@ -1,11 +1,10 @@
 using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace FNA.NET.Shapes {
     public class ShapeBatch {
-        public ShapeBatch(GraphicsDevice graphicsDevice, ContentManager content) {
+        public ShapeBatch(GraphicsDevice graphicsDevice) {
             _graphicsDevice = graphicsDevice;
 
             _effect = new ShapeEffect(_graphicsDevice);
