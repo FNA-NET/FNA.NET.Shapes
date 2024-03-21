@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Apos.Shapes {
+namespace FNA.NET.Shapes {
     public class ShapeBatch {
         public ShapeBatch(GraphicsDevice graphicsDevice, ContentManager content) {
             _graphicsDevice = graphicsDevice;
 
-            _effect = content.Load<Effect>("apos-shapes");
+            _effect = new ShapeEffect(_graphicsDevice);
 
             _vertices = new VertexShape[_initialVertices];
             _indices = new uint[_initialIndices];
@@ -68,7 +68,7 @@ namespace Apos.Shapes {
             EnsureSizeOrDouble(ref _vertices, _vertexCount + 4);
             _indicesChanged = EnsureSizeOrDouble(ref _indices, _indexCount + 6) || _indicesChanged;
 
-            rounded = MathF.Min(MathF.Min(rounded, size.X / 2f), size.Y / 2f);
+            rounded = Math.Min(Math.Min(rounded, size.X / 2f), size.Y / 2f);
 
             xy -= new Vector2(_aaOffset); // Account for AA.
             Vector2 size1 = size + new Vector2(_aaOffset * 2f); // Account for AA.
@@ -143,10 +143,10 @@ namespace Apos.Shapes {
             EnsureSizeOrDouble(ref _vertices, _vertexCount + 4);
             _indicesChanged = EnsureSizeOrDouble(ref _indices, _indexCount + 6) || _indicesChanged;
 
-            rounded = MathF.Min(rounded, radius);
+            rounded = Math.Min(rounded, radius);
 
             float radius1 = radius + _aaOffset; // Account for AA.
-            float width1 = 2f * radius / MathF.Sqrt(3f) + _aaOffset; // Account for AA.
+            float width1 = 2f * radius / (float)Math.Sqrt(3f) + _aaOffset; // Account for AA.
 
             radius -= rounded;
 
@@ -184,11 +184,11 @@ namespace Apos.Shapes {
             EnsureSizeOrDouble(ref _vertices, _vertexCount + 4);
             _indicesChanged = EnsureSizeOrDouble(ref _indices, _indexCount + 6) || _indicesChanged;
 
-            rounded = MathF.Min(rounded, radius);
+            rounded = Math.Min(rounded, radius);
 
             float height = radius * 3f;
 
-            float halfWidth = height / MathF.Sqrt(3f);
+            float halfWidth = height / (float)Math.Sqrt(3f);
             float incircle = height / 3f;
             float circumcircle = 2f * height / 3f;
 
@@ -196,7 +196,7 @@ namespace Apos.Shapes {
             float incircle1 = incircle + _aaOffset; // Account for AA.
             float circumcircle1 = circumcircle + _aaOffset; // Account for AA.
 
-            halfWidth -= rounded * MathF.Sqrt(3f);
+            halfWidth -= rounded * (float)Math.Sqrt(3f);
 
             var topLeft = center - new Vector2(halfWidth1, incircle1);
             var topRight = center + new Vector2(halfWidth1, -incircle1);
@@ -296,7 +296,7 @@ namespace Apos.Shapes {
             foreach (EffectPass pass in _effect.CurrentTechnique.Passes) {
                 pass.Apply();
 
-                _graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, _triangleCount);
+                _graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, _vertexCount, 0, _triangleCount);
             }
 
             _triangleCount = 0;
@@ -326,7 +326,7 @@ namespace Apos.Shapes {
             return new Vector2(-c.Y, c.X) + a;
         }
         private Vector2 Rotate(Vector2 a, Vector2 origin, float rotation) {
-            return new Vector2(origin.X + (a.X - origin.X) * MathF.Cos(rotation) - (a.Y - origin.Y) * MathF.Sin(rotation), origin.Y + (a.X - origin.X) * MathF.Sin(rotation) + (a.Y - origin.Y) * MathF.Cos(rotation));
+            return new Vector2(origin.X + (a.X - origin.X) * (float)Math.Cos(rotation) - (a.Y - origin.Y) * (float)Math.Sin(rotation), origin.Y + (a.X - origin.X) * (float)Math.Sin(rotation) + (a.Y - origin.Y) * (float)Math.Cos(rotation));
         }
 
         private bool EnsureSizeOrDouble<T>(ref T[] array, int neededCapacity) {

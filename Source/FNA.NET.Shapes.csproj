@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Content\apos-shapes.fxb">
+      <LogicalName>FNA.NET.Resources.apos-shapes.fxb</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FNA.NET" Version="1.0.4.2403" />
   </ItemGroup>
 
